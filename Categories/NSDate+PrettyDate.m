@@ -155,4 +155,17 @@
     return [NSString stringWithFormat:@"%@", datestr];
 }
 
+- (NSString*)localizedTime
+{
+    NSString*   timestr = [NSDateFormatter localizedStringFromDate:self
+                                                         dateStyle:NSDateFormatterNoStyle
+                                                         timeStyle:NSDateFormatterShortStyle];
+    if ([timestr isEqualToString:@"(null)"] == YES)
+    {
+        return @"";
+    }
+    
+    return [NSString stringWithFormat:@"%@", timestr];
+}
+
 @end
